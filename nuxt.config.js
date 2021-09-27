@@ -7,7 +7,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'jannata',
+    titleTemplate: (titleChunk) => {
+      return titleChunk ? `${titleChunk} | Jannata Resort & Spa` : 'Jannata Resort & Spa'
+    },
     htmlAttrs: {
       lang: 'en'
     },
@@ -31,7 +33,16 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    }
+  ],
+
+  styleResources: {
+	  scss: ['~assets/scss/_config.scss'],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -43,12 +54,14 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:3000'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: ['nuxt-gsap-module']
 }
