@@ -1,0 +1,200 @@
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -ms-transition: $property;
+    transition: $property;
+}
+
+@mixin state() {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+}
+
+$font-title: 'Playfair Display';
+$font-body:  'Source Sans Pro';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-body, sans-serif;
+}
+
+.banner {
+    .carousel-cell {
+        height: 100vh;
+        width: 100%;
+    }
+
+    &__container {
+        width: inherit;
+        height: inherit;
+        display: block;
+        background-color: rgba(0,0,0,.8);
+    }
+
+    &__image {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        opacity: .8;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+    }
+
+    &__title {
+        font-size: 42px;
+        font-family: $font-title, serif;
+        font-weight: 400;
+        letter-spacing: 5px;
+
+        @media (max-width: 767px) {
+            font-size: 28px;
+        }
+    }
+
+    &__description {
+        margin: 30px auto 0;
+        max-width: 400px;
+        text-align: center;
+        letter-spacing: 1px;
+
+        @media (max-width: 767px) {
+            max-width: unset;
+        }
+    }
+
+    &__content-link {
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 10px 30px;
+        border: 1px solid #fff;
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        font-weight: 500;
+        font-size: 14px;
+        @include transition(all .3s ease);
+
+        @include state() {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+    .flickity {
+        &-button {
+            background: none;
+            color: #fff;
+        }
+
+        &-prev-next-button {
+            top: unset;
+            bottom: 30px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+
+            @include state() {
+                background-color: unset;
+            }
+
+            &.previous {
+                left: 80%;
+
+                @media (max-width: 767px) {
+                    left: 10%;
+                }
+            }
+
+            &.next {
+                right: 12.5%;
+
+                @media (max-width: 767px) {
+                    left: 20%;
+                }
+            }
+        }
+
+        &-page-dots {
+            bottom: 45px;
+            left: 12.5%;
+            width: unset;
+
+            .dot {
+                width: 6px;
+                height: 6px;
+                background-color: #fff;
+                opacity: 0.4;
+                margin: 0 12px;
+            }
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.section-big-padding {
+    padding: 125px 0;
+}
+
+.bg-grey {
+    background-color: #f0f0f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.col {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.col-md-6 {
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+}
+
+.title {
+    font-size: 42px;
+    font-family: $font-title, serif;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.the-resort {
+    color: #5f5c68;
+}

@@ -1,6 +1,7 @@
 <template>
   <main>
-    <Banner :dynamic-data="dataHome.components[0]" />
+    <banner :dynamic-data="dataHome.components[0]" />
+    <the-resort :dynamic-data="dataHome.components[1]" />
   </main>
 </template>
 
@@ -18,8 +19,13 @@ export default {
   },
   head() {
     return {
-      title: 'Home'
+      title: 'Home',
+      script: [
+        { src: '/luxy.min.js', body: true },
+      ]
     }
+  },
+  mounted() {
   }
 }
 </script>
