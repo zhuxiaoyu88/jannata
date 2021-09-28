@@ -1,7 +1,9 @@
 <template>
   <main>
     <banner :dynamic-data="dataHome.components[0]" />
-    <the-resort :dynamic-data="dataHome.components[1]" />
+    <!-- <the-resort :dynamic-data="dataHome.components[1]" /> -->
+    <relaxing :dynamic-data="dataHome.components[4]" />
+    <testimoni :dynamic-data="dataHome.components[5]" />
   </main>
 </template>
 
