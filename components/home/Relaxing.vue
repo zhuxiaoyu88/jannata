@@ -1,12 +1,20 @@
 <template>
-    <section class="relaxing" :style="{'background-image': `url(${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big})`}">
-        <div class="relaxing__content">
-            <h3 class="title relaxing__title" v-html="model.title">
-            </h3>
-            <div class="ornament__green-line"></div>
-            <p class="relaxing__description">
-                {{ model.description }}
-            </p>
+    <section class="relaxing">
+        <div class="relaxing__background" data-scroll data-scroll-speed="-2" :style="{'background-image': `url(${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big})`}"></div>
+        <div class="container">
+            <div class="column-wrapper">
+                <div class="content content--type-1 content--white">
+                    <div class="content__inner">
+                        <h3 class="content__title relaxing__title" v-html="model.title">
+                        </h3>
+                        <div class="ornament_line"></div>
+                        <p class="content__description relaxing__description">
+                            {{ model.description }}
+                        </p>
+                        <a :href="model.link.url" class="content__link">{{ model.link.title }}</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </template>
