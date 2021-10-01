@@ -15,7 +15,7 @@
                             {{ model.title_one }} <br> <span class="text-green">{{ model.title_two }}</span>
                         </h3>
                         <div class="ornament_line"></div>
-                        <div class="content__description" v-html="model.description">
+                        <div class="content__description content__description--set-width" v-html="model.description">
                         </div>
                         <a :href="model.link.url" class="content__link content__link--variant-green">{{ model.link.title }}</a>
                     </div>

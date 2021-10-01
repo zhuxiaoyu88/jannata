@@ -6,10 +6,10 @@
                 <div class="column-wrapper">
                     <div class="content content--type-1 content--white position-absolute">
                         <div class="content__inner">
-                            <h3 class="content__title relaxing__title" v-html="model.title">
+                            <h3 class="content__title" v-html="model.title">
                             </h3>
                             <div class="ornament_line"></div>
-                            <div class="content__description relaxing__description" v-html="model.description">
+                            <div class="content__description content__description--set-width" v-html="model.description">
                             </div>
                             <a :href="model.link.url" class="content__link">{{ model.link.title }}</a>
                         </div>

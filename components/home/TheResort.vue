@@ -1,14 +1,16 @@
 <template>
     <section class="section-big-padding bg-grey the-resort">
         <div class="container">
-            <div class="row row-reverse">
-                <div class="col col-md-6">
-                    <div class="the-resort__bg-content">
-                    </div>
-                    <div class="the-resort__content">
-                        <h3 class="title" v-html="model.title"></h3>
-                        <a :href="model.link.url">{{ model.link.title }}</a>
-                        <div v-html="model.description"></div>
+            <div class="column-wrapper">
+                <div class="col col-md-6 order-md-2 align-self-center">
+                    <div class="content content--grey">
+                        <div class="the-resort__bg-content">
+                        </div>
+                        <div class="the-resort__content">
+                            <h3 class="content__title" v-html="model.title"></h3>
+                            <div class="content__description content__description--set-width" v-html="model.description"></div>
+                            <a class="content__link content__link--variant-green" :href="model.link.url">{{ model.link.title }}</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col col-md-6">
@@ -16,7 +18,7 @@
                         <picture>
                             <source media="(min-width:768px)" :srcset="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`">
                             <source media="(max-width:767px)" :srcset="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.medium}`">
-                            <img :src="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`" :alt="model.description" class="banner__image">
+                            <img data-scroll data-scroll-speed="-2" :src="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`" :alt="model.description" class="banner__image">
                         </picture>
                     </div>
                 </div>
