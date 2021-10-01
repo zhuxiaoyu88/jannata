@@ -17,7 +17,7 @@
     <main>
       <banner :dynamic-data="dataHome.components[0]" data-scroll-section />
       <!-- <the-resort :dynamic-data="dataHome.components[1]" /> -->
-      <div class="section-big-padding"></div>
+      <the-stay :dynamic-data="dataHome.components[2]" data-scroll-section />
       <dinner :dynamic-data="dataHome.components[3]" data-scroll-section />
       <relaxing :dynamic-data="dataHome.components[4]" data-scroll-section />
       <testimoni :dynamic-data="dataHome.components[5]" data-scroll-section />

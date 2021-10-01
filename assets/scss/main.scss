@@ -57,6 +57,10 @@ body {
     flex-direction: column-reverse;
 }
 
+.justify-content-end {
+    justify-content: flex-end;
+}
+
 .position-absolute {
     position: absolute;
 }
@@ -83,6 +87,10 @@ body {
 
     &--grey {
         color: #5f5c68;
+    }
+
+    &--semi-grey {
+        color: #d8d6e2;
     }
 
     &__title {
@@ -148,10 +156,21 @@ body {
     padding: 0 15px;
 }
 
+.col-md-4 {
+    @media (min-width: 768px) {
+        width: calc(100% / 12 * 4);
+    }
+}
+
 .col-md-6 {
     @media (min-width: 768px) {
         width: 50%;
     }
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
 }
 
 .banner {
@@ -287,6 +306,76 @@ body {
             }
         }
     }
+}
+
+.the-stay {
+    .content__description {
+        max-width: unset;
+    }
+}
+
+.property {
+    &__link {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        font-weight: 400;
+        @include transition(all .4s ease-out);
+        
+        @include state() {
+            .property__title::before {
+                width: 100%;
+            }
+
+            .property__image__on-hover {
+                width: 100%;
+            }
+        }
+    }
+
+    &__title {
+        position: absolute;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 30px;
+        text-transform: uppercase;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+
+        &::before {
+            content: '';
+            height: 1px;
+            background-color: #fff;
+            position: relative;
+            top: 0;
+            display: block;
+            width: 100px;
+            @include transition(all .4s ease-out);
+        }
+    }
+
+    &__image-wrapper {
+        display: block;
+    }
+
+    &__image {
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &__on-hover {
+            height: inherit;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 0;
+            @include transition(all .4s ease-out);
+        }
+    }
+
 }
 
 .dinner {
