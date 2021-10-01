@@ -18,6 +18,7 @@ $font-body:  'Source Sans Pro';
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -25,13 +26,20 @@ body {
     line-height: 1.8;
 }
 
-
 .section-big-padding {
     padding: 125px 0;
 }
 
 .bg-grey {
     background-color: #f0f0f5;
+}
+
+.bg-dark-grey {
+    background-color: #5f5c68;
+}
+
+.text-green {
+    color: #679334;
 }
 
 .container {
@@ -49,9 +57,15 @@ body {
     flex-direction: column-reverse;
 }
 
-.content {
+.position-absolute {
     position: absolute;
+}
 
+.small-container {
+    max-width: 500px;
+}
+
+.content {
     &--type-1 {
         top: 30%;
         transform: translateY(30%);
@@ -86,7 +100,7 @@ body {
     &__link {
         display: inline-block;
         text-decoration: none;
-        color: #679334;
+        color: #d1d1d1;
         padding: 15px 0;
         font-size: 12px;
         text-transform: uppercase;
@@ -95,6 +109,10 @@ body {
         margin-top: 15px;
         @include transition(all .3s ease-in-out);
         
+        &--variant-green {
+            color: #679334;
+        }
+
         &::before {
             content: '';
             display: block;
@@ -135,18 +153,6 @@ body {
         width: 50%;
     }
 }
-
-.title {
-    font-size: 42px;
-    font-family: $font-title, serif;
-    font-weight: 400;
-    letter-spacing: 5px;
-}
-
-.small-container {
-    max-width: 500px;
-}
-
 
 .banner {
     .carousel-cell {
@@ -270,6 +276,10 @@ body {
                 background-color: #fff;
                 opacity: 0.4;
                 margin: 0 12px;
+
+                &.is-selected {
+                    opacity: 1;
+                }
             }
 
             @media (max-width: 767px) {
@@ -279,10 +289,34 @@ body {
     }
 }
 
+.dinner {
+    .big-image {
+        flex: none;
+    
+        &__wrapper {
+            display: block;
+            padding: 0 15px;
+            width: 80%;
+            height: 600px;
+        }
+    
+        img {
+            width: 100%;
+            min-height: 250px;
+            height: auto;
+        }
+    }
 
+    .content {
+        background: white;
+        top: 0;
+        transform: unset;
+        margin-top: 100px;
+    }
+}
 
 .relaxing {
-    height: 110vh;
+    min-height: 110vh;
     position: relative;
     background-color: #000;
     overflow: hidden;
@@ -299,29 +333,6 @@ body {
         position: absolute;
         z-index: 0;
     }
-
-    // &__title {
-    //     font-weight: 400;
-    //     letter-spacing: 3px;
-    //     font-size: 35px;
-
-    //     @media (max-width: 425px) {
-    //         font-size: 28px;
-    //     }
-    // }
-
-    // .ornament__green-line {
-    //     width: calc(100% - 25%);
-    //     height: 1px;
-    //     background-color: #679334;
-    //     right: 0;
-    //     margin: 30px 0 45px;
-    // }
-
-    // &__description {
-    //     font-size: 14px;
-    //     line-height: 1.7;
-    // }
 }
 
 .testimoni {
