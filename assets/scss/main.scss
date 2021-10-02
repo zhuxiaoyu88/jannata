@@ -45,6 +45,8 @@ body {
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
 }
 
 .column-wrapper {
@@ -52,12 +54,6 @@ body {
     margin: 0 -15px;
     position: relative;
     flex-direction: row;
-}
-
-.order-md-1 {
-    @media (min-width: 768px) {
-        order: 1;
-    }
 }
 
 .order-md-2 {
@@ -70,8 +66,10 @@ body {
     align-self: center;
 }
 
-.justify-content-end {
-    justify-content: flex-end;
+.justify-md-content-end {
+    @media (min-width: 768px) {
+        justify-content: flex-end;
+    }
 }
 
 .position-absolute {
@@ -82,16 +80,43 @@ body {
     max-width: 500px;
 }
 
+.ornament_line {
+    height: 1px;
+    width: 100%;
+    background-color: #679334;
+    margin: 35px 0 40px;
+    position: relative;
+    right: -125px;
+}
+
+.col {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.col-md-4 {
+    @media (min-width: 768px) {
+        width: calc(100% / 12 * 4);
+    }
+}
+
+.col-md-6 {
+    @media (min-width: 768px) {
+        width: calc(100% / 12 * 6);
+    }
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
 .content {
     &--type-1 {
         top: 30%;
         transform: translateY(30%);
         width: 55%;
         right: 0;
-    }
-
-    &__inner {
-        padding: 50px 60px 70px;
     }
 
     &--white {
@@ -104,6 +129,10 @@ body {
 
     &--semi-grey {
         color: #d8d6e2;
+    }
+
+    &__inner {
+        padding: 50px 60px 70px;
     }
 
     &__title {
@@ -159,35 +188,22 @@ body {
     }
 }
 
-.ornament_line {
-    height: 1px;
-    width: 100%;
-    background-color: #679334;
-    margin: 35px 0 40px;
-    position: relative;
-    right: -125px;
-}
-
-.col {
-    width: 100%;
-    padding: 0 15px;
-}
-
-.col-md-4 {
-    @media (min-width: 768px) {
-        width: calc(100% / 12 * 4);
+.img-overlap {
+    &__container {
+        position: relative;
+        display: block;
+        min-width: 250px;
+        overflow: hidden;
     }
-}
 
-.col-md-6 {
-    @media (min-width: 768px) {
-        width: 50%;
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        object-fit: cover;
     }
-}
-
-.img-responsive {
-    width: 100%;
-    height: auto;
 }
 
 .banner {
@@ -327,7 +343,7 @@ body {
 
 .the-resort {
     .content {
-        padding-left: 75px;
+        padding-left: 45px;
         padding-right: 30px;
     }
 
@@ -342,24 +358,14 @@ body {
         z-index: -1;
     }
 
-    &__image-container {
+    .box-img {
         margin-top: -45px;
         margin-bottom: 45px;
+    }
 
-        picture {
-            position: relative;
-            display: block;
+    .img-overlap {
+        &__container {
             height: 550px;
-            min-width: 250px;
-            overflow: hidden;
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 120%;
-            }
         }
     }
 }
@@ -384,7 +390,7 @@ body {
                 width: 100%;
             }
 
-            .property__image__on-hover {
+            .property__img__on-hover {
                 width: 100%;
             }
         }
@@ -412,11 +418,7 @@ body {
         }
     }
 
-    &__image-wrapper {
-        display: block;
-    }
-
-    &__image {
+    &__img {
         height: 400px;
         background-position: center;
         background-repeat: no-repeat;
@@ -435,28 +437,25 @@ body {
 }
 
 .dinner {
-    .big-image {
-        flex: none;
-    
-        &__wrapper {
-            display: block;
-            padding: 0 15px;
-            width: 80%;
-            height: 600px;
-        }
-    
-        img {
-            width: 100%;
-            min-height: 250px;
-            height: auto;
+    .content {
+        background: white;
+        margin-top: 45px;
+        margin-bottom: -45px;
+
+        &__inner {
+            padding: 50px 60px;
         }
     }
 
-    .content {
-        background: white;
-        top: 0;
-        transform: unset;
-        margin-top: 100px;
+    .img-overlap {
+        &__container {
+            height: 575px;
+            width: 180%;
+        }
+
+        &__img {
+            z-index: -1;
+        }
     }
 }
 

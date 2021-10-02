@@ -2,7 +2,7 @@
     <section class="section-big-padding bg-dark-grey the-stay">
         <div class="container">
             <div class="main-content">
-                <div class="column-wrapper justify-content-end">
+                <div class="column-wrapper justify-md-content-end">
                     <div class="col col-md-6">
                         <div class="content content--semi-grey">
                             <h3 class="content__title">
@@ -21,8 +21,8 @@
                             <h4 class="property__title">
                                 {{ item.link.title }}
                             </h4>
-                            <div class="property__image" :style="{'background-image': `url(${item.featured.aws_file_url}/${item.featured.path}/${item.featured.filename.big})`}">
-                                <div class="property__image__on-hover" :style="{'background-image': `url(${item.featured_hover.aws_file_url}/${item.featured_hover.path}/${item.featured_hover.filename.big})`}">
+                            <div class="property__img" :style="{'background-image': `url(${item.featured.aws_file_url}/${item.featured.path}/${item.featured.filename.big})`}">
+                                <div class="property__img__on-hover" :style="{'background-image': `url(${item.featured_hover.aws_file_url}/${item.featured_hover.path}/${item.featured_hover.filename.big})`}">
                                 </div>
                             </div>
                         </a>

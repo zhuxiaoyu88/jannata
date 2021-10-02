@@ -32,17 +32,10 @@ export default {
 
     return { dataHome }
   },
-  data() {
-    return {
-
-    }
-  },
   head() {
     return {
       title: 'Home'
     }
-  },
-  mounted() {
   }
 }
 </script>

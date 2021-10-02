@@ -6,7 +6,7 @@
                     <div class="content content--grey">
                         <div class="the-resort__bg-content">
                         </div>
-                        <div class="the-resort__content">
+                        <div class="content">
                             <h3 class="content__title" v-html="model.title"></h3>
                             <div class="content__description content__description--set-width" v-html="model.description"></div>
                             <a class="content__link content__link--variant-green" :href="model.link.url">{{ model.link.title }}</a>
@@ -14,11 +14,11 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <div class="the-resort__image-container">
-                        <picture>
+                    <div class="box-img">
+                        <picture class="img-overlap__container">
                             <source media="(min-width:768px)" :srcset="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`">
                             <source media="(max-width:767px)" :srcset="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.medium}`">
-                            <img data-scroll data-scroll-speed="-2" :src="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`" :alt="model.description" class="banner__image">
+                            <img data-scroll data-scroll-speed="-2" :src="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`" :alt="model.title" class="img-overlap__img">
                         </picture>
                     </div>
                 </div>
