@@ -4,7 +4,7 @@
             <div class="relaxing__background" data-scroll data-scroll-speed="-2" :style="{'background-image': `url(${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big})`}"></div>
             <div class="container">
                 <div class="column-wrapper">
-                    <div class="content content--type-1 content--white position-absolute">
+                    <div data-scroll-trigger class="content content--type-1 content--white position-absolute">
                         <div class="content__inner">
                             <h3 class="content__title" v-html="model.title">
                             </h3>

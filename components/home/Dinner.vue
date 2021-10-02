@@ -7,12 +7,12 @@
                         <picture class="img-overlap__container">
                             <source media="(min-width:768px)" :srcset="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`">
                             <source media="(max-width:767px)" :srcset="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.medium}`">
-                            <img data-scroll data-scroll-speed="-2" :src="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`" :alt="`${model.title_one} ${model.title_two}`" class="img-overlap__img">
+                            <img data-scroll data-scroll-speed="-2" data-scroll-trigger-img :src="`${model.featured.aws_file_url}/${model.featured.path}/${model.featured.filename.big}`" :alt="`${model.title_one} ${model.title_two}`" class="img-overlap__img">
                         </picture>
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <div class="content content--grey">
+                    <div data-scroll-trigger class="content content--grey">
                         <div class="content__inner">
                             <h3 class="content__title">
                                 {{ model.title_one }} <br> <span class="text-green">{{ model.title_two }}</span>

@@ -4,7 +4,7 @@
             <div class="main-content">
                 <div class="column-wrapper justify-md-content-end">
                     <div class="col col-md-6">
-                        <div class="content content--semi-grey">
+                        <div data-scroll-trigger-text class="content content--semi-grey">
                             <h3 class="content__title">
                                 {{ dynamicData.model.title }}
                             </h3>
